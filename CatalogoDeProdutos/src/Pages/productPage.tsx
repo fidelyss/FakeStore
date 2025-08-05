@@ -14,7 +14,7 @@ export function ProductPage() {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
   const { products } = useProducts();
-  const { cartItems, addToCart, removeFromCart } = useCart(); // ✅ Importa funções do carrinho
+  const { cartItems, addToCart, removeFromCart } = useCart(); 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const toggleCart = () => setIsCartOpen((prev) => !prev);
 

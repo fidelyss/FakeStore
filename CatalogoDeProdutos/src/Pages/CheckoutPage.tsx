@@ -2,12 +2,12 @@ import { Navbar } from "../Components/navbar";
 import { Input } from "../Components/input";
 import { Button } from "../Components/button";
 import { useState } from "react";
-import { useCart } from "../contexts/CartContext"; // ✅ Importa o contexto do carrinho
+import { useCart } from "../contexts/CartContext"; 
 import {useNavigate } from "react-router-dom";
 
 export function CheckoutPage() {
   const [shipping, setShipping] = useState(10);
-  const { cartItems } = useCart(); // ✅ Usa os itens reais do carrinho
+  const { cartItems } = useCart(); 
   const navigate = useNavigate();
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const total = subtotal + shipping;

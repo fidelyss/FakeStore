@@ -1,6 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
-// 🧩 Tipo base do produto
 export type Product = {
   id: number;
   title: string;
@@ -14,26 +13,21 @@ export type Product = {
   };
 };
 
-// 🛒 Tipo do item no carrinho
 export type CartItem = Product & {
   quantity: number;
 };
 
-// 🧠 Tipagem do contexto
 type CartContextType = {
   cartItems: CartItem[];
   addToCart: (product: Product) => void;
   removeFromCart: (id: number) => void;
 };
 
-// 🎯 Criação do contexto
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-// 🎁 Provider
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  // ➕ Adiciona ou incrementa produto
   const addToCart = (product: Product) => {
     setCartItems((prev) => {
       const existingItem = prev.find((item) => item.id === product.id);
@@ -49,7 +43,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-  // ➖ Remove ou decrementa produto
   const removeFromCart = (id: number) => {
     setCartItems((prev) => {
       const existingItem = prev.find((item) => item.id === id);
@@ -72,7 +65,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// 🪝 Hook personalizado
 export const useCart = (): CartContextType => {
   const context = useContext(CartContext);
   if (!context) {

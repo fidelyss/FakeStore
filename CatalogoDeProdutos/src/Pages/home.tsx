@@ -45,8 +45,8 @@ export const Home = () => {
                         </span>
                     </h2>
                     <Button variant="danger" size="sm" className="mt-6 cursor-pointer" onClick={() => {
-                        addToCart(featuredProduct); // ✅ Adiciona ao carrinho
-                        navigate('/CheckoutPage'); // ✅ Redireciona
+                        addToCart(featuredProduct); 
+                        navigate('/CheckoutPage'); 
                     }}
                     >
                         Shop Now

@@ -100,7 +100,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       throw new Error(errorData.message || "Registration failed");
     }
 
-    // Registro bem-sucedido — agora faz login
     await loginAction(data);
 
   } catch (err) {
@@ -125,7 +124,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         user,
         isAuthenticated: !!token,
         loginAction,
-        registerAction, // ⬅️ Incluído no contexto
+        registerAction, 
         logOut,
       }}
     >

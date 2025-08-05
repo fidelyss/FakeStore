@@ -6,7 +6,7 @@ const PrivateRoute = () => {
   const location = useLocation();
 
   if (isAuthenticated === null) {
-    return <div>Loading...</div>; // Ou um spinner
+    return <div>Loading...</div>; 
   }
 
   console.log(isAuthenticated);
