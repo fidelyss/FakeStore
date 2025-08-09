@@ -30,7 +30,7 @@ type AuthContextType = {
   user: User | null;
   isAuthenticated: boolean;
   loginAction: (data: LoginData) => Promise<void>;
-  registerAction: (data: LoginData) => Promise<void>; // ⬅️ Novo método
+  registerAction: (data: LoginData) => Promise<void>; 
   logOut: () => void;
 };
 

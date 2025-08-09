@@ -105,14 +105,14 @@ export function ProductPage() {
             <Button
               size="sm"
               className="bg-gray-200 text-black hover:bg-gray-300"
-              onClick={handleAddToCart}
+              onClick={handleRemoveFromCart}
             >
               Remove
             </Button>
             <Button
               variant="danger"
               size="sm"
-              onClick={handleRemoveFromCart}
+              onClick={handleAddToCart}
             >
               Add to cart
             </Button>
